@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot - Genly</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+    <!-- Background Pattern -->
+    <div class="chatbot-bg-pattern"></div>
+    
+    <!-- Header -->
+    <header class="navbar">
+        <div class="navbar__logo">
+            <img src="http://localhost:3845/assets/dfcef4d23954178ece3a1d11e2d4caba02f7605f.svg" alt="Genly icon" class="logo__icon">
+            <img src="http://localhost:3845/assets/1ca783f6c10df8b68649d914d890b6f6e4f3c316.svg" alt="Genly text" class="logo__text">
+        </div>
+        <div class="navbar__content">
+            <nav class="navbar__links">
+                <a href="index.html" class="navlink opacity-50">Home</a>
+                <div class="dropdown-container">
+                    <button class="navlink active" data-dropdown="ai-tools">AI tools<span class="chev"></span></button>
+                    <div class="dropdown-menu ai-tools-dropdown" id="aiToolsDropdown">
+                        <div class="dropdown-content">
+                            <div class="dropdown-left">
+                                <div class="dropdown-header">
+                                    <span class="dropdown-title">AI tools</span>
+                                </div>
+                                <div class="dropdown-items">
+                                    <div class="dropdown-item active" data-tool="chatbot">
+                                        <div class="item-icon">
+                                            <img src="http://localhost:3845/assets/1de61e974a2dcad40288b10c15ba29590999add5.svg" alt="Chat">
+                                        </div>
+                                        <div class="item-content">
+                                            <div class="item-title">AI- chatbot</div>
+                                            <div class="item-description">Speak to our AI chatbot</div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-item" data-tool="audio">
+                                        <div class="item-icon">
+                                            <img src="http://localhost:3845/assets/efdae6d6e9cb9f59e6ce86aa5bf72365f01de816.svg" alt="Audio">
+                                        </div>
+                                        <div class="item-content">
+                                            <div class="item-title">Audio generation</div>
+                                            <div class="item-description">Speak to our AI chatbot</div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-item" data-tool="image">
+                                        <div class="item-icon">
+                                            <img src="http://localhost:3845/assets/4c7bdd3913d196ebafe6b32a04f049fb518b5203.svg" alt="Image">
+                                        </div>
+                                        <div class="item-content">
+                                            <div class="item-title">Image generation</div>
+                                            <div class="item-description">Speak to our AI chatbot</div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-item" data-tool="video">
+                                        <div class="item-icon">
+                                            <img src="http://localhost:3845/assets/098430d9c5a407f86a5638dd54218270144a4d36.svg" alt="Video">
+                                        </div>
+                                        <div class="item-content">
+                                            <div class="item-title">Video generation</div>
+                                            <div class="item-description">Speak to our AI chatbot</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-right">
+                                <div class="dropdown-image">
+                                    <img src="http://localhost:3845/assets/7c0433b2d83813eff23ec6a3779c1ca69493a9f6.png" alt="AI Tools" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="navlink opacity-50">Plan of growing</a>
+            </nav>
+            <div class="navbar__actions">
+                <button class="dropdown" data-dropdown="language">English<span class="chev"></span></button>
+                <button class="dropdown" data-dropdown="currency">EUR<span class="chev"></span></button>
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <img src="http://localhost:3845/assets/4f6686645d01adae23627192cce68e839d39f552.svg" alt="User">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name">John Smith</div>
+                        <div class="user-tokens">100 Tokens</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Chat Interface -->
+    <main class="chat-main">
+        <div class="chat-container">
+            <!-- Sidebar - Chat History -->
+            <aside class="chat-sidebar">
+                <div class="sidebar-header">
+                    <h3>CHAT HISTORY</h3>
+                    <button class="collapse-btn">
+                        <div class="screen-indicator"></div>
+                    </button>
+                </div>
+                
+                <div class="chat-history">
+                    <div class="history-item active" data-chat-id="chat-1">
+                        <div class="history-icon">
+                            <img src="http://localhost:3845/assets/7295ff703bc93b216f20b4fccf6f4a2249ab3c69.svg" alt="Chat">
+                        </div>
+                        <span>History chat 1 with some</span>
+                    </div>
+                    <div class="history-item" data-chat-id="chat-2">
+                        <span>How to build a website</span>
+                    </div>
+                    <div class="history-item" data-chat-id="chat-3">
+                        <span>Python programming help</span>
+                    </div>
+                    <div class="history-item" data-chat-id="chat-4">
+                        <span>Marketing strategies</span>
+                    </div>
+                </div>
+                
+                <button class="new-chat-btn" id="newChatBtn">
+                    <span>+</span> New chat
+                </button>
+            </aside>
+
+            <!-- Chat Area -->
+            <div class="chat-area">
+                <div class="chat-header">
+                    <div class="chat-logo">
+                        <img src="http://localhost:3845/assets/dfcef4d23954178ece3a1d11e2d4caba02f7605f.svg" alt="Genly icon" class="logo__icon">
+                        <img src="http://localhost:3845/assets/1ca783f6c10df8b68649d914d890b6f6e4f3c316.svg" alt="Genly text" class="logo__text">
+                    </div>
+                    
+                    <div class="welcome-message">
+                        <h1>Welcome to AI-Chatbot</h1>
+                        <p>Start a conversation with one of our AI models by entering your message or question below.</p>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be dynamically added here -->
+                </div>
+
+                <div class="chat-input-area">
+                    <div class="input-container">
+                        <div class="input-field">
+                            <textarea 
+                                id="messageInput" 
+                                placeholder="You can ask what do you want" 
+                                rows="1"
+                            ></textarea>
+                            
+                            <div class="input-actions">
+                                <div class="input-tools">
+                                    <button class="tool-btn" title="Attach file">
+                                        <img src="http://localhost:3845/assets/7181269824e6bd9146fd80df198254be86bbcbf8.svg" alt="Attach">
+                                    </button>
+                                </div>
+                                
+                                <button class="send-btn" id="sendBtn">
+                                    Ask
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__content">
+                <div class="footer__head">
+                    <div class="footer__brand">
+                        <img src="http://localhost:3845/assets/dfcef4d23954178ece3a1d11e2d4caba02f7605f.svg" alt="Genly icon" class="logo__icon">
+                        <img src="http://localhost:3845/assets/1ca783f6c10df8b68649d914d890b6f6e4f3c316.svg" alt="Genly text" class="logo__text">
+                    </div>
+                    <div class="footer__right">
+                        <div class="footer__social">
+                            <button class="social social--fb" aria-label="Facebook"></button>
+                            <button class="social social--ig" aria-label="Instagram"></button>
+                            <button class="social social--yt" aria-label="YouTube"></button>
+                            <button class="social social--x" aria-label="X"></button>
+                        </div>
+                        <div class="footer__payments">
+                            <span class="pay pay--mc" aria-label="Mastercard"></span>
+                            <span class="pay pay--visa" aria-label="VISA"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <a class="text" href="index.html">Home</a>
+                    <a class="text" href="chatbot.html">AI-Chatbot</a>
+                    <a class="text" href="#">Plan of growing</a>
+                    <a class="text" href="#">Pricing</a>
+                    <a class="text" href="#">Contact us</a>
+                </div>
+            </div>
+            <div class="footer__policies">
+                <a class="text text--small" href="#">T&C</a>
+                <a class="text text--small" href="#">Privacy Policy</a>
+                <a class="text text--small" href="#">Cookie policy</a>
+                <a class="text text--small" href="#">Shipping policy</a>
+            </div>
+            <hr class="footer__divider">
+            <div class="footer__bottom">
+                <p class="text text--tiny">+44 0000000000 • email@domain.uk • Mon-Fri 9am to 4pm (UTC -5) • SONKER MARKETS LIMITED, 27 Old Gloucester Street, London.</p>
+                <p class="text text--tiny">© 2020 Lift Media. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

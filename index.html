@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genly — AI Tools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="navbar">
+		<div class="navbar__logo" aria-label="Genly logo">
+			<img src="http://localhost:3845/assets/dfcef4d23954178ece3a1d11e2d4caba02f7605f.svg" alt="Genly icon" class="logo__icon">
+			<img src="http://localhost:3845/assets/1ca783f6c10df8b68649d914d890b6f6e4f3c316.svg" alt="Genly text" class="logo__text">
+		</div>
+		<div class="navbar__content">
+			<nav class="navbar__links">
+				<a href="#home" class="navlink is-active">Home</a>
+				<a href="chatbot.html" class="navlink">AI-Chatbot</a>
+			</nav>
+			<div class="navbar__actions">
+				<button class="dropdown" data-dropdown="language">English<span class="chev"></span></button>
+				<button class="dropdown" data-dropdown="currency">EUR<span class="chev"></span></button>
+				<button class="btn btn--secondary">Try now</button>
+				<button class="btn btn--primary" onclick="window.location.href='signup.html'">Sign up</button>
+			</div>
+		</div>
+	</header>
+
+	<main id="home" class="page">
+		<section class="hero">
+			<div class="hero__backdrop"></div>
+			<div class="hero__card">
+				<h1 class="h1">Unlock the Power of AI: <br>From intelligent chatbots to your personal assistant</h1>
+				<p class="lead">Revolutionary AI tools designed to streamline communication, supercharge task management, and automate your workflow. Join now and transform the way you work!</p>
+				<div class="hero__cta">
+					<button class="btn btn--primary" data-action="scroll-to" data-target="#products">Try now</button>
+				</div>
+			</div>
+		</section>
+
+		<section id="chatbot" class="section section--intro">
+			<span class="badge">Our products</span>
+			<h2 class="h1 h1--dark">AI chatbot</h2>
+			<p class="text text--muted text--center maxw-760">Your intelligent assistant for instant answers and everyday support. Built to simplify your workflow, our Chatbot AI responds to your questions, guides your tasks, and helps you stay productive — anytime, anywhere.</p>
+
+			<div class="intro__grid">
+				<div class="intro__shot" aria-hidden="true"></div>
+				<div class="intro__copy">
+					<h3 class="h3">How it works:</h3>
+					<p class="text">We've integrated advanced AI technology into a clean, user-friendly experience. No extra steps — choose, pay, and start chatting. No need to search across platforms — the tool you need is here.</p>
+					<button class="btn btn--dark" data-action="start-convo">Start conversation</button>
+				</div>
+			</div>
+
+			<p class="headline-gradient maxw-1000">An intelligent platform that unites the best AI tools to streamline communication, organize tasks, and automate your workflow — all in one place</p>
+		</section>
+
+		<section id="products" class="section section--products">
+			<span class="badge">Our products</span>
+			<div class="products-box">
+				<div class="product-accordion" role="tablist">
+					<button class="product-tab" role="tab" aria-selected="true" aria-controls="pane-audio" id="tab-audio"> 
+						<span class="h3">Audio Studio</span>
+						<span class="text text--muted">Text to audio generation.</span>
+					</button>
+					<button class="product-tab" role="tab" aria-selected="false" aria-controls="pane-image" id="tab-image">
+						<span class="h3">Image Studio</span>
+						<span class="text text--muted">Generate your images and explore your creativity</span>
+					</button>
+					<button class="product-tab" role="tab" aria-selected="false" aria-controls="pane-video" id="tab-video">
+						<span class="h3">Video Studio</span>
+						<span class="text text--muted">Generate video like a pro!</span>
+					</button>
+				</div>
+				<div class="product-pane" id="pane-audio" role="tabpanel" aria-labelledby="tab-audio"></div>
+				<div class="product-pane is-hidden" id="pane-image" role="tabpanel" aria-labelledby="tab-image"></div>
+				<div class="product-pane is-hidden" id="pane-video" role="tabpanel" aria-labelledby="tab-video"></div>
+			</div>
+		</section>
+
+		<section class="section section--cards">
+			<span class="badge">Soon</span>
+			<h2 class="h1 h1--dark">Next in line: Cool AI stuff to test</h2>
+			<p class="text text--center maxw-640">Ready to tame your workday? Our AI toolkits make chats, emails, meetings, and presentations easy—no hassle, just results, so you can focus on what matters, and very soon, to test.</p>
+
+			<div class="cards-viewport cards-viewport--horizontal" role="region" aria-label="Upcoming tools list">
+				<div class="cards cards--horizontal">
+					<article class="card">
+						<div class="card__badge">Soon</div>
+						<h3 class="h3">ChatBot</h3>
+						<p class="text">Management of your conversations to keep them clear and under control.</p>
+						<div class="card__img" data-img="chatbot"></div>
+					</article>
+					<article class="card">
+						<div class="card__badge">Soon</div>
+						<h3 class="h3">Smart Inbox</h3>
+						<p class="text">Efficient email management that organizes your inbox and helps you respond quickly.</p>
+						<div class="card__img" data-img="inbox"></div>
+					</article>
+					<article class="card">
+						<div class="card__badge">Soon</div>
+						<h3 class="h3">AI Scheduler</h3>
+						<p class="text">Meeting management that plans your meetings and sends hassle-free reminders.</p>
+						<div class="card__img" data-img="scheduler"></div>
+					</article>
+					<article class="card">
+						<div class="card__badge">Soon</div>
+						<h3 class="h3">Virtual Assistant</h3>
+						<p class="text">Your personal AI assistant for task and reminder management.</p>
+						<div class="card__img" data-img="assistant"></div>
+					</article>
+					<article class="card">
+						<div class="card__badge">Soon</div>
+						<h3 class="h3">AI Presenter</h3>
+						<p class="text">Presentation management that turns your ideas into sharp, ready-to-go slides.</p>
+						<div class="card__img" data-img="presenter"></div>
+					</article>
+				</div>
+			</div>
+			<div class="carousel-controls">
+				<button class="btn btn--icon" data-carousel="prev" aria-label="Previous"></button>
+				<button class="btn btn--icon" data-carousel="next" aria-label="Next"></button>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__top">
+			<div class="footer__content">
+				<div class="footer__head">
+					<div class="footer__brand">
+						<img src="http://localhost:3845/assets/dfcef4d23954178ece3a1d11e2d4caba02f7605f.svg" alt="Genly icon" class="logo__icon">
+						<img src="http://localhost:3845/assets/1ca783f6c10df8b68649d914d890b6f6e4f3c316.svg" alt="Genly text" class="logo__text">
+					</div>
+					<div class="footer__right">
+						<div class="footer__social">
+							<button class="social social--fb" aria-label="Facebook"></button>
+							<button class="social social--ig" aria-label="Instagram"></button>
+							<button class="social social--yt" aria-label="YouTube"></button>
+							<button class="social social--x" aria-label="X"></button>
+						</div>
+						<div class="footer__payments">
+							<span class="pay pay--mc" aria-label="Mastercard"></span>
+							<span class="pay pay--visa" aria-label="VISA"></span>
+						</div>
+					</div>
+				</div>
+				<div class="footer__links">
+					<a class="text" href="#home">Home</a>
+					<a class="text" href="#chatbot">AI-Chatbot</a>
+					<a class="text" href="#">Plan of growing</a>
+					<a class="text" href="#">Pricing</a>
+					<a class="text" href="#">Contact us</a>
+				</div>
+			</div>
+			<div class="footer__policies">
+				<a class="text text--small" href="#">T&C</a>
+				<a class="text text--small" href="#">Privacy Policy</a>
+				<a class="text text--small" href="#">Cookie policy</a>
+				<a class="text text--small" href="#">Shipping policy</a>
+			</div>
+			<hr class="footer__divider">
+			<div class="footer__bottom">
+				<p class="text text--tiny">+44 0000000000 • email@domain.uk • Mon-Fri 9am to 4pm (UTC -5) • SONKER MARKETS LIMITED, 27 Old Gloucester Street, London.</p>
+				<p class="text text--tiny">© 2020 Lift Media. All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="app.js"></script>
+</body>
+</html>

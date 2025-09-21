@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Generator - Genly</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="voice-generator.css">
+</head>
+<body>
+    <!-- Background Pattern -->
+    <div class="voice-bg-pattern"></div>
+    
+    <!-- Header -->
+    <header class="navbar voice-header-nav">
+        <div class="navbar__logo">
+            <img src="http://localhost:3845/assets/dfcef4d23954178ece3a1d11e2d4caba02f7605f.svg" alt="Genly icon" class="logo__icon">
+            <img src="http://localhost:3845/assets/1ca783f6c10df8b68649d914d890b6f6e4f3c316.svg" alt="Genly text" class="logo__text">
+        </div>
+        <div class="navbar__content">
+            <nav class="navbar__links">
+                <a href="index.html" class="navlink opacity-50">Home</a>
+                <div class="dropdown-container">
+                    <button class="navlink active" data-dropdown="ai-tools">Voice generator<span class="chev"></span></button>
+                    <div class="dropdown-menu ai-tools-dropdown" id="aiToolsDropdown">
+                        <div class="dropdown-content">
+                            <div class="dropdown-left">
+                                <div class="dropdown-header">
+                                    <span class="dropdown-title">AI tools</span>
+                                </div>
+                                <div class="dropdown-items">
+                                    <div class="dropdown-item" data-tool="chatbot">
+                                        <div class="item-icon">
+                                            <img src="http://localhost:3845/assets/1de61e974a2dcad40288b10c15ba29590999add5.svg" alt="Chat">
+                                        </div>
+                                        <div class="item-content">
+                                            <div class="item-title">AI- chatbot</div>
+                                            <div class="item-description">Speak to our AI chatbot</div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-item active" data-tool="audio">
+                                        <div class="item-icon">
+                                            <img src="http://localhost:3845/assets/efdae6d6e9cb9f59e6ce86aa5bf72365f01de816.svg" alt="Audio">
+                                        </div>
+                                        <div class="item-content">
+                                            <div class="item-title">Audio generation</div>
+                                            <div class="item-description">Speak to our AI chatbot</div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-item" data-tool="image">
+                                        <div class="item-icon">
+                                            <img src="http://localhost:3845/assets/4c7bdd3913d196ebafe6b32a04f049fb518b5203.svg" alt="Image">
+                                        </div>
+                                        <div class="item-content">
+                                            <div class="item-title">Image generation</div>
+                                            <div class="item-description">Speak to our AI chatbot</div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-item" data-tool="video">
+                                        <div class="item-icon">
+                                            <img src="http://localhost:3845/assets/098430d9c5a407f86a5638dd54218270144a4d36.svg" alt="Video">
+                                        </div>
+                                        <div class="item-content">
+                                            <div class="item-title">Video generation</div>
+                                            <div class="item-description">Speak to our AI chatbot</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-right">
+                                <div class="dropdown-image">
+                                    <img src="http://localhost:3845/assets/7c0433b2d83813eff23ec6a3779c1ca69493a9f6.png" alt="AI Tools" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="navlink opacity-50">Plan of growing</a>
+            </nav>
+            <div class="navbar__actions">
+                <button class="dropdown" data-dropdown="language">English<span class="chev"></span></button>
+                <button class="dropdown" data-dropdown="currency">EUR<span class="chev"></span></button>
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <img src="http://localhost:3845/assets/4f6686645d01adae23627192cce68e839d39f552.svg" alt="User">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name">John Smith</div>
+                        <div class="user-tokens">100 Tokens</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="voice-main">
+        <div class="voice-container">
+            <div class="content-container">
+                <div class="header-container">
+                    <!-- Header Section -->
+                    <div class="voice-header">
+                        <div class="header-content">
+                            <h1>Turn your words into speech</h1>
+                            <p>Convert any text into natural-sounding voice instantly — just enter your desired text.</p>
+                        </div>
+                    </div>
+
+                    <!-- Script Input Section -->
+                    <div class="script-container">
+                        <div class="script-input-wrapper">
+                            <div class="script-input-field">
+                                <div class="script-input-label">Enter script</div>
+                                <textarea 
+                                    id="scriptInput" 
+                                    rows="8"
+                                ></textarea>
+                                
+                                <div class="script-options-container">
+                                    <div class="script-options-wrapper">
+                                        <div class="script-options">
+                                            <div class="option-group">
+                                                <div class="option-item">
+                                                    <img src="http://localhost:3845/assets/7181269824e6bd9146fd80df198254be86bbcbf8.svg" alt="Attach">
+                                                </div>
+                                                <div class="option-item">
+                                                    <img src="http://localhost:3845/assets/0158dc0e44174d8f2eb7998ed3cce741334ac1cb.svg" alt="Translate">
+                                                    <span>Language</span>
+                                                </div>
+                                                <div class="option-item">
+                                                    <img src="http://localhost:3845/assets/f150b57cd244a534bfa7b8527e8e0ef94213dc2b.svg" alt="Mic">
+                                                    <span>Voice</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="generate-button-container">
+                                        <span class="time-left">35 min left</span>
+                                        <button class="generate-btn" id="generateBtn">
+                                            Generate
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Collection Section -->
+                    <div class="collection-container">
+                        <div class="collection-header">
+                            <h2>My collection</h2>
+                            <p>All your generated voice clips in one place. Listen, manage, or download anytime.</p>
+                        </div>
+                        
+                        <div class="collection-item">
+                            <div class="collection-image">
+                                <img src="http://localhost:3845/assets/4b7ab0d49cfd1b01715fbb6ec70e7544d4b60545.svg" alt="Collection" />
+                                <div class="collection-icons">
+                                    <div class="icon-item icon-1">
+                                        <img src="http://localhost:3845/assets/8ce610a1eaf4a9c28003abb3835a1348fa1c14a9.svg" alt="Order">
+                                    </div>
+                                    <div class="icon-item icon-2">
+                                        <img src="http://localhost:3845/assets/4aacf3d8e49deb4d4e1864a3a51c138194b77909.svg" alt="Image">
+                                    </div>
+                                    <div class="icon-item icon-3">
+                                        <img src="http://localhost:3845/assets/3a648a476c8fac77faa1e4efdf55626261d1209c.svg" alt="Audio">
+                                    </div>
+                                    <div class="icon-item icon-4">
+                                        <img src="http://localhost:3845/assets/87c47900145d725cf338c038506367d79c314aba.svg" alt="Audio">
+                                    </div>
+                                    <div class="icon-item icon-5">
+                                        <img src="http://localhost:3845/assets/f2b03d5a390587eb780b460ec31acba0023aedea.svg" alt="Document">
+                                    </div>
+                                    <div class="icon-item icon-6">
+                                        <img src="http://localhost:3845/assets/4aacf3d8e49deb4d4e1864a3a51c138194b77909.svg" alt="Image">
+                                    </div>
+                                    <div class="icon-item icon-7">
+                                        <img src="http://localhost:3845/assets/4aacf3d8e49deb4d4e1864a3a51c138194b77909.svg" alt="Image">
+                                    </div>
+                                    <div class="icon-item icon-8">
+                                        <img src="http://localhost:3845/assets/33097e1eb200225c2600f20743c92f30a2e217ea.svg" alt="File">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-content">
+                                <h3>Your collection is still empty</h3>
+                                <p>Start exploring AI tools to create and collect your favorite videos, voices, images, and more — all in one place.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__content">
+                <div class="footer__head">
+                    <div class="footer__brand">
+                        <img src="http://localhost:3845/assets/dfcef4d23954178ece3a1d11e2d4caba02f7605f.svg" alt="Genly icon" class="logo__icon">
+                        <img src="http://localhost:3845/assets/1ca783f6c10df8b68649d914d890b6f6e4f3c316.svg" alt="Genly text" class="logo__text">
+                    </div>
+                    <div class="footer__right">
+                        <div class="footer__social">
+                            <button class="social social--fb" aria-label="Facebook"></button>
+                            <button class="social social--ig" aria-label="Instagram"></button>
+                            <button class="social social--yt" aria-label="YouTube"></button>
+                            <button class="social social--x" aria-label="X"></button>
+                        </div>
+                        <div class="footer__payments">
+                            <span class="pay pay--mc" aria-label="Mastercard"></span>
+                            <span class="pay pay--visa" aria-label="VISA"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <a class="text" href="index.html">Home</a>
+                    <a class="text" href="chatbot.html">AI-Chatbot</a>
+                    <a class="text" href="#">Plan of growing</a>
+                    <a class="text" href="#">Pricing</a>
+                    <a class="text" href="#">Contact us</a>
+                </div>
+            </div>
+            <div class="footer__policies">
+                <a class="text text--small" href="#">T&C</a>
+                <a class="text text--small" href="#">Privacy Policy</a>
+                <a class="text text--small" href="#">Cookie policy</a>
+                <a class="text text--small" href="#">Shipping policy</a>
+            </div>
+            <hr class="footer__divider">
+            <div class="footer__bottom">
+                <p class="text text--tiny">+44 0000000000 • email@domain.uk • Mon-Fri 9am to 4pm (UTC -5) • SONKER MARKETS LIMITED, 27 Old Gloucester Street, London.</p>
+                <p class="text text--tiny">© 2020 Lift Media. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="voice-generator.js"></script>
+</body>
+</html>
